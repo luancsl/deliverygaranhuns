@@ -17,9 +17,9 @@
                                 <div class="row">
                                     <div style="padding: 0.5em; margin-top: 0.5rem;" class="col-md-2">
                                         @if(isset($estabelecimento->imagemCapa) && $estabelecimento->imagemCapa != "" )
-                                            <img src="{{ asset('storage/imagens/' . $estabelecimento->imagemCapa) }}" alt="torre" width="65px;">
+                                            <img src="{{ asset('storage/imagens/' . $estabelecimento->imagemCapa) }}" width="65" height="65">
                                         @else
-                                            <img src="{{ asset('icones/sem_imagem.png') }}" alt="torre" width="65px;">
+                                            <img src="{{ asset('icones/sem_imagem.png') }}"  width="65">
                                         @endif
                                     </div>
                                     <div class="col-md-10">
@@ -48,9 +48,9 @@
                                             <div class="row">
                                                 <div class="col-md-3" style="height: 100px;">
                                                     @if(isset($estabelecimento->imagemCapa) && $estabelecimento->imagemCapa != "" )
-                                                        <img src="{{ asset('storage/imagens/' . $estabelecimento->imagemCapa) }}" alt="torre" width="120px;">
+                                                        <img src="{{ asset('storage/imagens/' . $estabelecimento->imagemCapa) }}"  width="120" height="120">
                                                     @else
-                                                        <img src="{{ asset('icones/sem_imagem.png') }}" alt="torre" width="65px;">
+                                                        <img src="{{ asset('icones/sem_imagem.png') }}" alt="torre" width="120px;">
                                                     @endif
                                                 </div>
                                                 <div class="col-md-9">
@@ -67,17 +67,14 @@
                                                                 {{$estabelecimento->endereco->rua }}, {{$estabelecimento->endereco->numero }}, {{$estabelecimento->endereco->bairro }}
                                                             </div>
                                                             <div class="col-md-12">
-                                                                <div class="row">
-                                                                    <div class="col-sm-6">
                                                                         @foreach($estabelecimento->telefones as $telefone)
                                                                             @if($telefone->zap)
                                                                                 <img src="{{asset('icones/Icon awesome-whatsapp.svg')}}" width="19px;">
-                                                                                <label>(81)99172-3212</label>
+                                                                                <label>{{$telefone->numero}}</label>
                                                                                 @break
                                                                             @endif
                                                                         @endforeach
-                                                                    </div>
-                                                                </div>
+
                                                             </div>
                                                             <div class="col-md-12">
                                                                 <img src="{{asset('icones/Icon awesome-calendar-alt.svg')}}" width="18px;">

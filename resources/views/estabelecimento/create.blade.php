@@ -272,7 +272,7 @@
             {{-- Rua | Número | Bairro --}}
             <div class="form-group row">
                 <div class="col-md-2">
-                    <label for="cep" class="col-form-label">CEP *</label>
+                    <label for="?" class="col-form-label">CEP *</label>
                     <input value="{{old('cep')}}" onblur="pesquisacep(this.value);" id="cep" type="text" required autocomplete="cep" name="cep" autofocus class="form-control field__input a-field__input" placeholder="CEP" size="10" maxlength="9" >
                     @error('cep')
                     <span class="invalid-feedback" role="alert">
@@ -305,8 +305,8 @@
                     <input value="{{old('bairro')}}" id="bairro" type="text" class="form-control @error('bairro') is-invalid @enderror" name="bairro" >
                 </div>
                 <div class="col-md-4">
-                    <label for="bairro" class="col-form-label">Cidade</label>
-                    <input readonly type="text" class="form-control" name="cidade" id="cidade" value="{{ old('cidade') }}" />
+                    <label for="bairro" class="col-form-label">Cidade *</label>
+                    <input readonly type="text" class="form-control" name="cidade" id="cidade" required value="{{ old('cidade') }}" />
                 </div>
                 <div class="col-md-4">
                     <label for="bairro" class="col-form-label">UF</label>
